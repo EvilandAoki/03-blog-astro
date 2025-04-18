@@ -1,0 +1,59 @@
+html {
+    background-color: #1a202c;
+    /* Equivalent to bg-gray-900 */
+    padding-left: 2.5rem;
+    /* Equivalent to px-10 */
+    padding-right: 2.5rem;
+    /* Equivalent to px-10 */
+}
+
+body {
+    margin-top: 2.5rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    /* Equivalent to mt-10 */
+}
+
+h1 {
+    font-size: 1.875rem;
+    /* Equivalent to text-3xl */
+    color: #ffffff;
+    /* Equivalent to text-white */
+    margin: 1.25rem 0;
+    /* Equivalent to my-5 */
+}
+
+h2 {
+    font-size: 1.5rem;
+    /* Equivalent to text-2xl */
+    color: #4299e1;
+    /* Equivalent to text-blue-500 */
+    margin: 1.25rem 0;
+    /* Equivalent to my-5 */
+}
+
+h3 {
+    font-size: 1.25rem;
+    /* Equivalent to text-xl */
+    color: #ffffff;
+    /* Equivalent to text-white */
+    margin: 1.25rem 0;
+    /* Equivalent to my-5 */
+}
+
+p {
+    color: #ffffff;
+    /* Equivalent to text-white */
+    margin: 1.25rem 0;
+    /* Equivalent to my-5 */
+}
+
+a {
+    color: #4299e1;
+    /* Equivalent to text-blue-500 */
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+    /* Equivalent to hover:underline */
+}
