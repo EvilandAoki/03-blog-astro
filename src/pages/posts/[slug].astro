@@ -4,6 +4,8 @@ import type { GetStaticPaths } from "astro";
 import BlogLayout from "@layouts/BlogLayout.astro";
 import { getCollection } from "astro:content";
 import { Image } from "astro:assets";
+import { getEntry } from "astro:content";
+import { Formatter } from "@utils/formatter";
 
 export const getStaticPaths = (async () => {
     const blogPosts = await getCollection("blog");
@@ -21,12 +23,30 @@ const frontmatter = post.data;
 
 const { Content, headings } = await post.render();
 
-console.log(frontmatter);
+const author = await getEntry("author", frontmatter.author.id);
+
+console.log(author.data);
 ---
 
 <BlogLayout title={frontmatter.title}>
     <h1 class="text-xs text-gray-500 mb-0">{frontmatter.title}</h1>
-    <h4 class="text-xs text-gray-400 mb-0">{frontmatter.author}</h4>
+    <!-- <h4 class="text-xs text-gray-400 mb-0">{frontmatter.author.id}</h4> -->
+
+    <div class="text-md text-gray-400 mb-0 flex flex-row mt-2">
+        <img src={`${author.data.avatar}`} alt="" />
+        <!-- INVESTIGAR COMO TRAER IMAGENES DESDE COLECCIONES EN LOCAL -->
+        <!-- <Image
+            src={`${author.avatar}`}
+            class="rounded-full"
+            alt={"registro  de una imagen"}
+            width={50}
+            height={50}
+        /> -->
+        <div class="flex flex-col ml-5">
+            <a href="#"> {author?.data.name}</a>
+            <span>{Formatter.formatDate(frontmatter.date)}</span>
+        </div>
+    </div>
 
     <!-- componente IMAGE -->
 
